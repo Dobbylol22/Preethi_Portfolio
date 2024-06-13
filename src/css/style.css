@@ -11,3 +11,75 @@
     --color-body: hsl(129, 41%, 80%); 
     --color-heading: hsl (129, 41%, 95%); 
 }
+
+*,*::after,*::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%; /* % will fix the scale up and down of the font size */
+    scroll-behavior: smooth;
+}
+
+body {
+    font-size: 1.6rem;
+    background-color: var(--color-bg);
+    color: var(--color-body);
+    line-height: 1.5;
+    font-family: var(--font-base), sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+     margin-bottom: 0.8rem;
+     line-height: 1.2;
+     color: var(--color-heading);
+     text-transform: uppercase;
+}
+
+.heading-1 {
+     font-size: clamp(4.4rem,6vm,6.4rem); /*use clamp(min_val,preferred_val,max_val) function for responsive text heading.*/
+}
+.heading-2 {
+    font-size: clamp(2.6rem,4vm,3.2rem); /*use clamp(min_val,preferred_val,max_val) function for responsive text heading.*/
+}
+.heading-3 {
+    font-size: 1.8rem;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-brand);
+    transition: all 0.4s ease;
+}
+
+a:hover {
+    color: var(--color-brand2);
+}
+
+img {
+    max-width: 100%;
+    width: 100%;
+    display: inline-block; /*for responsive image*/
+}
+
+/*Side bar*/
+
+#sidebar {
+    min-height: 100vh;
+    width: 24rem;
+    position: fixed; /*when u scroll the page it will not move*/
+    top: 0;
+    left: 0;
+    background: linear-gradient(hsla(var(--sidebar-hsl),0.6), hsla(var(--sidebar-hsl),0.9)), url(../img/preths.jpg);
+    background-position: center;
+    background-size: cover;
+    display: grid;
+    align-content: center;
+    text-align: center;
+}
+
+#sidebar .person {
+   margin-bottom: 2.4rem; /*2.4rem = 24px*/
+}
