@@ -52,6 +52,7 @@ a {
     text-decoration: none;
     color: var(--color-brand);
     transition: all 0.4s ease;
+    font-size: 500;
 }
 
 a:hover {
@@ -72,14 +73,83 @@ img {
     position: fixed; /*when u scroll the page it will not move*/
     top: 0;
     left: 0;
-    background: linear-gradient(hsla(var(--sidebar-hsl),0.6), hsla(var(--sidebar-hsl),0.9)), url(../img/preths.jpg);
+    background: linear-gradient(hsla(var(--sidebar-hsl),0.6), hsla(var(--sidebar-hsl),0.9)), url(../img/sidebar-01.jpg);
     background-position: center;
     background-size: cover;
     display: grid;
     align-content: center;
     text-align: center;
+    z-index: 999;
+    transition: all 0.4s ease; /*when window is resized to smaller then it has to hide the sidebar*/
 }
 
 #sidebar .person {
    margin-bottom: 2.4rem; /*2.4rem = 24px*/
+}
+
+#sidebar .person img{
+    border-radius: var(--border-radius-lg);
+    width: 17rem;
+    box-shadow: 0 0 0 0.4rem var(--color-brand);
+    margin-bottom: 1.2rem;
+}
+
+#sidebar ul {
+    text-transform: uppercase;
+    display: grid;
+    gap: 1.2rem; /*it gave the gap between the sidebar text/contents*/
+}
+
+#sidebar ul li a{
+    color: var(--color-heading);
+}
+#sidebar ul li a.is-active {
+    color: var(--color-brand);
+}
+#sidebar ul li a:hover {
+    color: var(--color-brand);
+}
+
+.burger{
+    width: 6.4rem;
+    height: 6.4rem;
+    background-color: var(--color-brand);
+    border-radius: 10rem;
+    position: fixed;
+    right: 2.4rem;
+    top: 2.4rem;
+    cursor: pointer;
+    display: grid;
+    align-content: center; /*the line in the burger will now be in the middle of the circle*/
+    display: none; /*wants to hide the burger when it is in the full screen. Only display it when the display size is reducing*/
+}
+
+.burger span {
+    width: 4rem;
+    height: 0.4rem;
+    display: block;
+    background-color: var(--color-bg2);
+    margin: 1.2rem auto;
+}
+
+.burger.is-active span:nth-child(1) {
+    transform: translateY(0.8rem) rotate(-45deg);
+   
+}
+.burger.is-active span:nth-child(2) {
+    transform: translateY(-0.8rem) rotate(45deg);
+   
+}
+
+/*this will diplay back the burger when window is resized to smaller*/
+@media screen and (max-width:992px){
+    .burger {
+        display: grid;
+    }
+    #sidebar {
+        left: -24rem; /*orginally we gave 24rem but since we want it hide or move to left side. so, -24rem*/
+    }
+    #sidebar.is-active{
+        left: 0; /*when we click on the burger the sidebar should appear*/
+    }
 }
