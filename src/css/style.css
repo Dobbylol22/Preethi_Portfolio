@@ -25,7 +25,7 @@ html {
 
 body {
     font-size: 1.6rem;
-    background-color: var(--color-bg);
+    
     color: var(--color-body);
     line-height: 1.5;
     font-family: var(--font-base), sans-serif;
@@ -39,13 +39,17 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .heading-1 {
-     font-size: clamp(4.4rem,6vm,6.4rem); /*use clamp(min_val,preferred_val,max_val) function for responsive text heading.*/
+     font-size: clamp(4.4rem,6vw,6.4rem); /*use clamp(min_val,preferred_val,max_val) function for responsive text heading.*/
 }
 .heading-2 {
-    font-size: clamp(2.6rem,4vm,3.2rem); /*use clamp(min_val,preferred_val,max_val) function for responsive text heading.*/
+    font-size: clamp(3.2rem,4vw, 4.4rem); /*use clamp(min_val,preferred_val,max_val) function for responsive text heading.*/
 }
 .heading-3 {
     font-size: 1.8rem;
+}
+
+.text-brand {
+    color: var(--color-brand);
 }
 
 a {
@@ -65,11 +69,75 @@ img {
     display: inline-block; /*for responsive image*/
 }
 
+section.full-height {
+    min-height: 100vh;
+    display: grid;
+    align-content: center;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.533); /* this is to divide the page/sections with a line*/
+    padding: 8rem 0;
+}
+
+p {
+    margin-bottom: 1.6rem;
+}
+
+.container { /*it creates space between the sidebar and the content on the main*/
+    max-width: 114rem;
+    padding: 0 5rem;
+}
+
+@media screen and (max-width:768px){
+    container {
+        padding: 0 2.4rem; 
+    }
+    
+}
+
+.btn {
+    padding: 1.4rem 2.4rem;
+    background-color: var(--color-brand);
+    color: var(--color-bg2);
+    text-transform: uppercase;
+    font-size: 500;
+    border-radius: var(--border-radius);
+    border: transparent;
+    font-size: 1.6rem;
+    font-family: var(--font-base);
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: var(--color-brand2);
+    color: var(--color-bg2);
+}
+
+.social-links {
+    display: flex;
+    gap: 0.8rem;
+}
+
+.social-links a {
+    width: 14rem;
+    height: 4.4rem;
+    display: grid;
+    align-content: center;
+    background-color: var(--color-bg2);
+    color: var(--color-body);
+    text-align: center;
+    border-radius: 10rem;
+    font-size: 2.4rem;
+}
+
+.social-links a:hover {
+    background-color: var(--color-brand);
+}
+
+
 /*Side bar*/
 
 #sidebar {
     min-height: 100vh;
-    width: 24rem;
+    width: 35rem;
     position: fixed; /*when u scroll the page it will not move*/
     top: 0;
     left: 0;
@@ -141,15 +209,200 @@ img {
    
 }
 
+/*Main*/
+#content-wrapper {  /*this is two separate the content in the main area and sidebar, to ensure it won't overlap on eachother.*/
+    padding-left: 35rem;
+    
+}
+
+
 /*this will diplay back the burger when window is resized to smaller*/
 @media screen and (max-width:992px){
     .burger {
         display: grid;
     }
     #sidebar {
-        left: -24rem; /*orginally we gave 24rem but since we want it hide or move to left side. so, -24rem*/
+        left: -35rem; /*orginally we gave 24rem but since we want it hide or move to left side. so, -24rem*/
     }
     #sidebar.is-active{
         left: 0; /*when we click on the burger the sidebar should appear*/
     }
+    #content-wrapper {
+        padding-left: 0;
+        
+    }
+    
+}
+
+/*Home*/
+#home {
+    background: url('../img/s1.JPG');
+    background-repeat:no-repeat;
+-webkit-background-size:cover;
+-moz-background-size:cover;
+-o-background-size:cover;
+background-size:cover;
+background-position:center;
+}
+#home .cta {
+   display: flex;
+   flex-wrap: wrap;
+   align-items: center;
+   gap: 1.6rem;
+   
+}
+
+#home p {   /*this for the para on the home page */
+    max-width: 600px;
+    margin-top: 2.4rem;
+    margin-bottom: 3.4rem;
+    text-align: justify;
+}
+
+/* Grid */
+.grid {
+    display: grid;
+    gap: 2.4rem; /*it gives the space between the cards in the project section*/
+}
+
+.three-col-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.two-col-grid {
+    grid-template-columns: 1fr 1fr;
+}
+@media screen and (max-width:768px) {
+    .three-col-grid {
+        grid-template-columns: 1fr 1fr; /*responsive card, as the screen size reduces to 768px, it will fit the cards.*/
+    }
+    .two-col-grid {
+        grid-template-columns: 1fr 1fr; /*responsive card, as the screen size reduces to 768px, it will fit the cards.*/
+    }
+}
+@media screen and (max-width:576px) {
+    .three-col-grid {
+        grid-template-columns: 1fr; /*responsive card, as the screen size reduces to 768px, it will fit the cards.*/
+    }
+    .two-col-grid {
+        grid-template-columns: 1fr; /*responsive card, as the screen size reduces to 768px, it will fit the cards.*/
+    }
+}
+
+
+/*Intro*/
+#Education {
+    background: url('https://t4.ftcdn.net/jpg/02/98/89/07/360_F_298890723_gxZy7ljKF1pvZcGTpxxUEKPmVXoF2eCZ.jpg');
+    background-repeat:no-repeat;
+    -webkit-background-size:cover;
+    -moz-background-size:cover;
+    -o-background-size:cover;
+    background-size:cover;
+    background-position:center;
+}
+
+#Proj {
+    background: url('https://img.freepik.com/free-vector/geometric-gradient-futuristic-background_23-2149116406.jpg');
+    background-repeat:no-repeat;
+    -webkit-background-size:cover;
+    -moz-background-size:cover;
+    -o-background-size:cover;
+    background-size:cover;
+    background-position:center;
+}
+
+#WorkExp {
+    background: url('https://img.freepik.com/free-photo/flat-lay-workstation-with-copy-space-laptop_23-2148430879.jpg');
+    background-repeat:no-repeat;
+-webkit-background-size:cover;
+-moz-background-size:cover;
+-o-background-size:cover;
+background-size:cover;
+background-position:center;
+    
+    
+}
+.intro {
+    margin-bottom: 3.2rem;
+    
+}
+
+.card {  /*Design the card*/
+   transition: all 0.4s ease;
+   border-radius: var(--border-radius-lg);
+   background-color: var(--color-bg2);
+   cursor: pointer;
+}
+
+.card-padding {
+    padding: 4.4rem 3.2rem;
+}
+.card img {
+    border-top-right-radius: var(--border-radius-lg);
+    border-top-left-radius: var(--border-radius-lg);
+    height: 40vh;
+}
+
+.icon {
+    width: 5.4rem;
+    height: 4.4rem;
+    font-size: 3.2rem;
+    border-radius: var(--border-radius);
+    background-color: rgba(255, 208, 0, 0.315);
+    color: white;
+    text-align: center;
+    align-content: center;
+    display: grid;
+    margin-bottom: 1.8rem; /*it is the space between the icon and the text h2*/
+    
+}
+
+#services .card p {
+    margin-bottom: 0;
+}
+
+.card:hover {
+    box-shadow: 0 0 0 0.3rem var(--color-brand);
+    transform: translateY(-0.5rem);
+}
+
+/* form */
+#contact {
+    background: url('https://www.nfbuk.org/wp-content/uploads/2016/09/contact-bg.jpg');
+    background-repeat:no-repeat;
+    -webkit-background-size:cover;
+    -moz-background-size:cover;
+    -o-background-size:cover;
+    background-size:cover;
+    background-position:center;
+}
+.form {
+    display: grid;
+    gap: 1.2rem;
+    color: rgb(252, 246, 246);
+}
+
+.form-control {
+    background-color: rgba(92, 189, 230, 0.61);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--color-bg2);
+    padding: 1.4rem;
+    font-size: 1.6rem;
+}
+.form-control::placeholder {
+    color: black;
+}
+.form-control:focus {
+    outline: none;
+    border-color: var(--color-brand);
+}
+
+footer {
+    padding: 8rem 0;
+    background-color: var(--color-bg);
+}
+
+footer .container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
