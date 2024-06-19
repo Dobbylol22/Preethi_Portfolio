@@ -327,47 +327,41 @@ background-position:center;
 }
 
 .card {  /*Design the card*/
-   transition: all 0.4s ease;
+   display: flex;
+   flex-direction: column;
    border-radius: var(--border-radius-lg);
-   background-color: var(--color-bg2);
+   background-color: rgba(0, 0, 0, 0.353);
    cursor: pointer;
-}
-.card-row {
-    display: flex;
-    background-color: #b651e95a;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    margin-bottom: 10px;
-}
-
-.card-row img {
-    width: 200px;
-    height: auto;
-    max-height: 200px;
-    flex-shrink: 0;
-    border-top-left-radius: 8px;
-    border-bottom-left-radius: 8px;
-}
-
-.card-content {
-    padding: 20px;
-    flex: 1;
-}
-
-.card-content {
-    margin-top: 20px;
+   overflow: hidden;
+   margin-bottom: 20px;
+   transition: max-height 0.4s ease;
+   flex-wrap: wrap;
 }
 
 .card-padding {
     padding: 4.4rem 3.2rem;
+    flex: 1;
+}
+.card-padding p {
+    margin: 0;
 }
 .card img {
     border-top-right-radius: var(--border-radius-lg);
     border-top-left-radius: var(--border-radius-lg);
     height: 40vh;
 }
+
+.extra-content {
+    display: none;
+}
+
+.read-more {
+    color: rgb(225, 225, 237);
+    cursor: pointer;
+    margin-top: 10px;
+    display: inline-block;
+}
+
 
 .icon {
     width: 5.4rem;
@@ -433,3 +427,30 @@ footer .container {
     justify-content: space-between;
     flex-wrap: wrap;
 }
+
+/* Education Details */
+.card-row {
+    display: flex;
+    background-color: #b651e95a;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin-bottom: 10px;
+}
+
+.card-row img {
+    width: 200px;
+    height: auto;
+    max-height: 200px;
+    flex-shrink: 0;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.card-content {
+    padding: 20px;
+    flex: 1;
+    margin-top: 20px;
+}
+
