@@ -34,8 +34,16 @@ body {
 h1, h2, h3, h4, h5, h6 {
      margin-bottom: 0.8rem;
      line-height: 1.2;
-     color: var(--color-heading);
+     color: rgb(235, 190, 56);
      text-transform: uppercase;
+}
+
+#box {
+    background-color: rgba(6, 6, 6, 0.5);
+    color: #a5e0ed;
+    border-radius: 10px;
+    width: 65rem;
+   
 }
 
 .heading-1 {
@@ -121,7 +129,7 @@ p {
     height: 4.4rem;
     display: grid;
     align-content: center;
-    background-color: var(--color-bg2);
+    background-color: rgba(0, 0, 0, 0.5);
     color: var(--color-body);
     text-align: center;
     border-radius: 10rem;
