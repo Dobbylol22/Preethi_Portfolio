@@ -462,3 +462,10 @@ footer .container {
     margin-top: 20px;
 }
 
+.extra-content1 {
+    display: none;
+}
+
+.read-more1 { 
+    cursor: pointer;
+} 

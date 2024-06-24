@@ -20,18 +20,38 @@ AOS.init({
 
 
 document.getElementById('read-more').addEventListener('click', () =>{
-    var extracontent = document.getElementById('extra-content')
-    var card = document.getElementById('card')
+    const extracontent = document.getElementById('extra-content')
+    const card = document.getElementById('card')
+    const read = document.getElementById('read-more')
     
-    if (extracontent.style.display == 'block') {
-        extracontent.style.display = 'none'
-        this.textContent = 'Read More'
-        card.style.height = 'auto'
+    if (extracontent.style.display === 'none' || extracontent.style.display === '') {
+        extracontent.style.display = 'block'
+        read.textContent = 'Read Less'
     }
     else {
-        extracontent.style.display = 'block'
-        this.textContent = 'Read less'
-        card.style.height = 'auto'
+        extracontent.style.display = 'none'
+        read.textContent = 'Read More'
     }
+    card.style.height = 'auto'
+    card.offsetHeight
+
+});
+
+
+document.getElementById('read-more1').addEventListener('click', () =>{
+    const extracontent = document.getElementById('extra-content1')
+    const card = document.getElementById('card')
+    const read = document.getElementById('read-more1')
+    
+    if (extracontent.style.display === 'none' || extracontent.style.display === '') {
+        extracontent.style.display = 'block'
+        read.textContent = 'Read Less'
+    }
+    else {
+        extracontent.style.display = 'none'
+        read.textContent = 'Read More'
+    }
+    card.style.height = 'auto'
+    card.offsetHeight
 
 });
