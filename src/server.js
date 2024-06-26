@@ -4,7 +4,7 @@ const nodemailer = require('nodemailer')
 require('dotenv').config()
 
 const app = express()
-const port = 3000
+const port = process.env.PORT || 3000
 
 app.use(bodyParser.urlencoded({ extended: true}))
 app.use(bodyParser.json())
@@ -46,5 +46,5 @@ transporter.sendMail(mailOptions, (error, info) => {
 });
 
 app.listen(port, ()=> {
-    console.log(`Server running on http://localhost:${port}`)
+    console.log(`Server running on port ${port}`)
 });
